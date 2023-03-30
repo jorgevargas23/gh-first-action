@@ -38,6 +38,6 @@ on:
           - 'yes'
           - 'no'
 jobs:
-  - uses: gh-first-action/.github/workflows/deploy-test.yml@main
+  - uses: gh-first-action/gh-first-action/.github/workflows/deploy-test.yml@main
     with:
       GO-TO-DEV: ${{ github.events.inputs.GO-TO-DEV }}
