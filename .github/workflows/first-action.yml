@@ -49,13 +49,6 @@ jobs:
         
       - name: Deploy
         run: echo "deploying to dev...done"
-
-  no-deploy-dev:
-    if:  github.event.inputs.GO-TO-DEV == 'no' 
-    runs-on: ubuntu-latest
-    steps:
-# here you would want to use AAInternal to deploy using their docker action
-      - run: echo "Not deploying to dev"
         
   deploy-test:
     if:  github.event.inputs.GO-TO-TEST  == 'yes'
