@@ -38,6 +38,7 @@ on:
           - 'yes'
           - 'no'
 jobs:
-  - uses: ./.github/workflows/deploy-test.yml
+  deploy:
+    uses: ./.github/workflows/deploy-test.yml
     with:
       GO-TO-DEV: ${{ github.events.inputs.GO-TO-DEV }}
