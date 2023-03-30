@@ -1,26 +1,42 @@
 name: First Workflow
-on: workflow_dispatch
-  inputs:
-    GO_TO_DEV:
-      description: 'Deploy/Promote to Dev?'
-      required: false
-      default: 'no'
-    GO_TO_TEST:
-      description: 'Deploy/Promote to Test?'
-      required: false
-      default: 'no'
-    GO_TO_STAGE:
-      description: 'Deploy/Promote to Stage?'
-      required: false
-      default: 'no'
-    GO_TO_DR:
-      description: 'Deploy/Promote to DR?'
-      required: false
-      default: 'no'
-    GO_TO_PROD:
-      description: 'Deploy/Promote to Prod?'
-      required: false
-      default: 'no'
+on: 
+  workflow_dispatch:
+    inputs:
+      GO-TO-DEV:
+        description: 'Deploy/Promote to Dev?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-TEST:
+        description: 'Deploy/Promote to Test?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-STAGE:
+        description: 'Deploy/Promote to Stage?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-DR:
+        description: 'Deploy/Promote to DR?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-PROD:
+        description: 'Deploy/Promote to Prod?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
 jobs:
   deploy-dev:
     if: GO_TO_DEV == 'yes'
