@@ -1,0 +1,99 @@
+name: Deploy Project
+on: 
+  workflow_call:
+    inputs:
+      GO-TO-DEV:
+        description: 'Deploy/Promote to Dev?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-TEST:
+        description: 'Deploy/Promote to Test?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-STAGE:
+        description: 'Deploy/Promote to Stage?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-DR:
+        description: 'Deploy/Promote to DR?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+      GO-TO-PROD:
+        description: 'Deploy/Promote to Prod?'
+        required: true
+        default: 'no'
+        options:
+          - 'yes'
+          - 'no'
+jobs:
+  deploy-dev:
+    if:  github.event.inputs.GO-TO-DEV == 'yes' 
+    runs-on: ubuntu-latest
+    steps:
+# here you would want to use AAInternal to deploy using their docker action
+      - run: echo  github.event.inputs.GO-TO-DEV 
+      - name: Build
+        run: echo "building..."
+        
+      - name: Deploy
+        run: echo "deploying to dev...done"
+        
+  deploy-test:
+    if:  github.event.inputs.GO-TO-TEST  == 'yes'
+    runs-on: ubuntu-latest
+    steps:
+# here you would want to use AAInternal to deploy using their docker action
+      - run: echo  github.event.inputs.GO-TO-TEST 
+      - name: Build
+        run: echo "building..."
+        
+      - name: Deploy
+        run: echo "deploying to test...done"
+  
+  deploy-stage:
+    if:  github.event.inputs.GO-TO-STAGE  == 'yes'
+    runs-on: ubuntu-latest
+    steps:
+# here you would want to use AAInternal to deploy using their docker action
+      - run: echo  github.event.inputs.GO-TO-STAGE 
+      - name: Build
+        run: echo "building..."
+        
+      - name: Deploy
+        run: echo "deploying to stage...done"
+        
+  deploy-dr:
+    if:  github.event.inputs.GO-TO-DR  == 'yes'
+    runs-on: ubuntu-latest
+    steps:
+# here you would want to use AAInternal to deploy using their docker action
+      - run: echo  github.event.inputs.GO-TO-DR 
+      - name: Build
+        run: echo "building..."
+        
+      - name: Deploy
+        run: echo "deploying to DR...done"
+        
+  deploy-prod:
+    if:  github.event.inputs.GO-TO-PROD  == 'yes'
+    runs-on: ubuntu-latest
+    steps:
+# here you would want to use AAInternal to deploy using their docker action
+      - run: echo  github.event.inputs.GO-TO-PROD 
+      - name: Build
+        run: echo "building..."
+        
+      - name: Deploy
+        run: echo "deploying to prod...done"
