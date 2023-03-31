@@ -6,26 +6,31 @@ on:
         description: 'Deploy/Promote to Dev?'
         required: true
         default: 'no'
+        type: string
 
       GO-TO-TEST:
         description: 'Deploy/Promote to Test?'
         required: true
         default: 'no'
+        type: string
 
       GO-TO-STAGE:
         description: 'Deploy/Promote to Stage?'
         required: true
         default: 'no'
+        type: string
 
       GO-TO-DR:
         description: 'Deploy/Promote to DR?'
         required: true
         default: 'no'
+        type: string
 
       GO-TO-PROD:
         description: 'Deploy/Promote to Prod?'
         required: true
         default: 'no'
+        type: string
 
 jobs:
   deploy-dev:
