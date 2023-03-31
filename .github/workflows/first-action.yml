@@ -42,3 +42,7 @@ jobs:
     uses: ./.github/workflows/deploy-test.yml
     with:
       GO-TO-DEV: ${{ github.events.inputs.GO-TO-DEV }}
+      GO-TO-TEST: ${{ github.events.inputs.GO-TO-TEST }}
+      GO-TO-STAGE: ${{ github.events.inputs.GO-TO-STAGE }}
+      GO-TO-DR: ${{ github.events.inputs.GO-TO-DR }}
+      GO-TO-PROD: ${{ github.events.inputs.GO-TO-PROD }}
